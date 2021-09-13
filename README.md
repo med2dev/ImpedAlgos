@@ -1,3 +1,3 @@
-# Algorithms Implemented from Data Structures and Algorithms course
+# Algorithms Implemented from Data Structures and Algorithms review
 
 * Linear Search

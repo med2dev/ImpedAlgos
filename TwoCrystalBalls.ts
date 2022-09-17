@@ -26,20 +26,41 @@ two_crystal_balls([false, false, false, false, false]) // -1
 // that was false, walk one at a time until you find the first true
 
 export default function two_crystal_balls(breaks: boolean[]): number {
-    const jmpAmount = Math.floor(sqrt(breaks.length));
-    let i = jmpAmount;
-    for (; i < breaks.length; i += jmpAmount){
-        if (breaks[i]){
+    // jump by the square root of the length
+    const jumpSize = Math.floor(Math.sqrt(breaks.length));
+
+    // set a value for i outside the loop so you can refer to it outside this
+    // scope. This is the position in the array
+    let i = jumpSize
+    // loop through by the jumpSize until the first crystal balls breaks
+    for (; i < breaks.length; i += jumpSize){
+        // if the first crystal ball breaks
+        if (breaks[i]) {
+            // exit the loop
             break;
         }
     }
 
-    i == jmpAmount;
+    // Either you jumped past one or more final floors without testing, or
+    // The ball doesn't break from the highest floor, or
+    // The ball broke
+    // In either of these 3 cases, you want to do the same thing:
+    // go back by the jump size
+    i -= jumpSize;
 
-    for (let j = 0; j < jmpAmount && i < breaks.length; ++j, ++i){
+    // loop one at a time until you reach the jumpSize, or the end of the array
+    // find the first true
+    for (let j = 0; j < jumpSize && i < breaks.length; ++j, ++i){
         if (breaks[i]){
+            // if it's broken, you've been stepping one at a time, so this is the
+            // position of the first break
             return i;
         }
     }
+
+    // if you complete the array without finding a true, there isn't one
+    // return a sentinal value
     return -1;
+
+
 }

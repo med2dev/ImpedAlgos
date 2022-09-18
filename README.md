@@ -2,3 +2,4 @@
 
 * Linear Search
 * Binary Search
+* Two Crystal Balls

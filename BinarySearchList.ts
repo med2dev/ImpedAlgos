@@ -24,16 +24,16 @@ export default function bs_list(haystack: number[], needle: number): boolean {
           }
         }
 //        do {
-//            const m = Math.floor(lo + (hi - lo)/ 2);
-//            const v = haystack[m];
+//            const m = Math.floor(lo + (hi - lo)/ 2)
+//            const v = haystack[m]
 //            if (v === needle){
-//                return true;
+//                return true
 //            } else if (v > needle) {
-//                hi = m;
+//                hi = m
 //            } else {
-//                lo = m + 1;
+//                lo = m + 1
 //            }
-//        } while (lo < hi);
+//        } while (lo < hi)
 
-        return false;
+        return false
 }

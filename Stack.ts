@@ -14,7 +14,9 @@ export default class Stack<T>{
 
     push(item: T): void{
         this.length++
-        
+        const newNode = {value: item} as Node<T>
+        newNode.prev = this?.head
+        this.head = newNode 
 
     }
 

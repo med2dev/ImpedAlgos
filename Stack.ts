@@ -16,11 +16,19 @@ export default class Stack<T>{
         this.length++
         const newNode = {value: item} as Node<T>
         newNode.prev = this?.head
-        this.head = newNode 
+        this.head = newNode
 
     }
 
     pop(): T | undefined {
+        this.length = Math.max(0, this.length - 1)
+
+        const oldHead = this.head as Node<T>
+        this.head = oldHead?.prev
+
+        // TODO: free
+
+        return oldHead?.value
 
     }
 

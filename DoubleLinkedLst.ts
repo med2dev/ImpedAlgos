@@ -1,3 +1,8 @@
+type Node<T> = {
+    value: T,
+    prev?: Node<T>,
+    next?: Node<T>,
+}
 
 export default class DoublyLinkedList<T> {
     public length: number

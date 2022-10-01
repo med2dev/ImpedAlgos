@@ -29,7 +29,12 @@ export default class DoublyLinkedList<T> {
 
     }
     get(idx: number): T | undefined {
+        let curr = this.head
+        for (let i = 0; i < idx && curr; ++i){
+            curr = curr?.next
+        }
 
+        return curr?.value
     }
     removeAt(idx: number): T | undefined {
 
